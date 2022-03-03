@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Recommendation System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="cover" style="background: url(course.jpg); height: 100vh;">
+        <button id="Home"><a href="http://localhost/CRS/admin/php/course.html">Home</a></button>
+        <div class="wrapper">
+            <h3>Register</h3>
+            <div id="error_message"></div>
+            <form action="http://localhost/CRS/admin/php/register.php" id="register_form" onsubmit="return validate_register();" method="POST">
+                <div class="form-control">
+                    <input type="text" id="fname" name="fname" placeholder="First Name">
+                </div>
+                <div class="form-control">
+                    <input type="text" id="lname" name="lname" placeholder="Last Name">
+                </div>
+                <div class="form-control">
+                    <input type="text" id="register_email" name="register_email" placeholder="Email">
+                </div>
+                <div class="form-control">
+                    <label for="course">Choose the Course:</label>
+                    <select id="course" name="course">
+                        <option>Select</option>
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="payment_method">Choose payment method:</label>
+                    <select id="payment_method" name="payment_method">
+                        <option>Select</option>
+                        <option value="Google Pay">Google Pay</option>
+                        <option value="PhonePe">PhonePe</option>
+                        <option value="NetBanking">NetBanking</option>
+                        <option value="Card">Card</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <input type="submit" id="register_btn" name="register_btn" placeholder="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
