@@ -18,6 +18,12 @@ $result = mysqli_query($db,$query);
 $row2 = mysqli_fetch_array($result);
 $paymentID = $row2[0];
 
-$query="INSERT INTO register_course(First_Name, Last_Name, Email, Course_Id, PaymentMethodID, PaymentDateTime) VALUES('$fname','$lname','$email','$CourseID','$paymentID', NOW())";
+$query = "SELECT id FROM register_user WHERE Email='$email'";
+$result = mysqli_query($db,$query);
+
+$row2 = mysqli_fetch_array($result);
+$userID = $row2[0];
+$query="INSERT INTO register_course(First_Name, Last_Name, Email, Course_Id, PaymentMethodID, PaymentDateTime, user) VALUES('$fname','$lname','$email','$CourseID','$paymentID', NOW(), '$userID')";
+
 mysqli_query($db,$query);
 ?>
